@@ -1,0 +1,54 @@
+leader_traits = {	
+	mountain_specialist = {
+		type = corps_commander
+		gain_xp = {
+			is_fighting_in_terrain = mountain
+		}
+		cost = 700
+		modifier = {
+			mountain = {
+				movement = 0.15
+				attack = 0.1
+				defence = 0.25
+				}
+			}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	eth_hill_fighter = {
+		type = corps_commander
+		gain_xp = {
+			is_fighting_in_terrain = hills
+		}
+		cost = 700
+		modifier = {
+			hills = {
+				movement = 0.05
+				attack = 0.1
+				defence = 0.1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	eth_desert_warfare = {
+		type = corps_commander
+		gain_xp = {
+			is_fighting_in_terrain = desert
+		}
+		cost = 700
+		modifier = {
+			desert = {
+				movement = 0.05
+				attack = 0.1
+				defence = 0.1
+			}
+		}
+	}
+	ai_will_do = {
+			factor = 1
+		}
+}	

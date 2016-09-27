@@ -1,0 +1,72 @@
+#####################################################################
+#																	#
+#					       Liberia Reborn 				  		    #
+#																	#
+# 							Liberian Ideas 							#
+#																 	#
+#####################################################################
+
+
+ideas = {
+	# MILITARY
+country = {
+	
+	little_america = {
+		allowed = {	original_tag = LIB	}
+		allowed_civil_war = {	always = yes	}
+		removal_cost = -1
+		picture = generic_democratic_drift_bonus
+			
+			modifier = {
+				democratic_drift = 0.2
+				democratic_acceptance = 85
+			}
+	}
+	
+	
+		
+}
+	
+	
+
+	high_command = {
+		# DO NOT REMOVE
+		ETH_wehib_pasha = {
+			picture = generic_army_europe_3
+			
+			allowed = 
+			{ 
+				original_tag = ETH	
+			}
+			available =  
+			{
+				NOT = { has_country_flag = purge_1_group_b }	
+				has_completed_focus = ETH_ferenghi
+			}
+
+			traits = { army_infantry_2 }
+			
+		}
+	}	
+
+	theorist = {
+		ETH_georges_deffontaine = {
+			
+			picture = generic_navy_europe_1
+			allowed = {
+				original_tag = ETH # Unlocked via focus
+
+			}
+			available = {has_completed_focus = ETH_foreign_advisors}
+			
+			cost = 50
+			
+			research_bonus = {
+				cat_mass_assault = 0.10
+			}
+			
+			traits = { mass_assault_expert }
+		}	
+	}
+
+}

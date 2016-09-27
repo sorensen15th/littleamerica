@@ -1,0 +1,42 @@
+﻿#####################################################################
+#																	#
+#					 Revenge of Prester John				  		#
+#																	#
+# 						FOCUS STRINGS 							    #
+#																 	#
+#####################################################################
+
+l_english:
+ eth_focus:0 "Ethiopian National Focus"
+ ETH_black_lions:0 "Form the Black Lions"
+ ETH_black_lions_desc:0 "An Anti-Fascist movement which was founded to resist Italian Occupation of Ethiopia. "
+ ETH_mil_factory:0 "Build Military Factories"
+ ETH_mil_factory_desc:0 "If we ever hope to fight effectively, we must produce our own weapons."
+ ETH_mil_factory2:0 "Continue to Develop Industry"
+ ETH_mil_factory2_desc:0 "We must further our development of industry."
+ ETH_christmas_offensive:0 "Christmas Offensive"
+ ETH_christmas_offensive_desc:0 "A Counter-offesive measure by Ethiopia to split the Italian forces in the northen front"
+ ETH_national_mobilization:0 "National Mobilization"
+ ETH_national_mobilization_desc:0 "'All men and boys able to carry a spear go to Addis Ababa. Every married man will bring his wife to cook and wash for him. Every unmarried man will bring any unmarried woman he can find to cook and wash for him. Women with babies, the blind, and those too aged and infirm to carry a spear are excused. Anyone found at home after receiving this order will be hanged.' Selassie's Mobilization Order"
+ ETH_plea_to_lon:0 "Plea to the League of Nations"
+ ETH_plea_to_lon_desc:0 "Haile Selassie plead to the League of Nations in June 1936 for them to impose sanctions on Italy. " 
+ ETH_ferenghi:0 "The Ferenghi"
+ ETH_ferenghi_desc:0 "The 'Ferengi' or Foreigers were a group of military advisors, pilots, and Red Cross doctors who assisted Ethiopia during the war with Italy."
+ ETH_german_equipment:0 "German Support"
+ ETH_german_equipment_desc:0 "Following Italy's initial objections with Germany's Anschuluss, German supplied Ethopia with rifles and ammunition in hopes of weakening Italy."
+ ETH_german_design:0 "Copy German Designs"
+ ETH_german_design_desc:0 "Using the guns Germany has supplied us, we are able to reverse engineer their designs"
+ ETH_homeland_defense:0 "Defense of the Homeland"
+ ETH_homeland_defense_desc:0 "We cannot allow Italy to take our soverign territory. We cannot rely on anyone but ourselves."
+ ETH_mountain_forts:0 "Secure the Mountains"
+ ETH_mountain_forts_desc:0 "We must foritfy our positions on the mountains if we hope to hold out against Italy."
+ ETH_capital_forts:0 "Secure the Capital"
+ ETH_capital_forts_desc:0 "We will turn Addis Ababa into a fortress."
+ ETH_hold_line:0 "Hold the Line"
+ ETH_hold_line_desc:0 "We cannot take one step back, and must hold our ground against the Italian invaders. Reinforcing current trenches, and new practices to defend our ground will go a long way."
+ ETH_japanese_assistance:0 "Japanese Assistance"
+ ETH_japanese_assistance_desc:0 "We must make a plea to Japan to support Ethiopia in the time of our greatest need. Popular support in Japan is with us, now we need to convince their leaders to support us once again."
+ ETH_royal_wedding:0 "A Royal Wedding"
+ ETH_royal_wedding_desc:0 "Rumors spread in 1934 that the Ethiopian royal family, and the Japanese royal family would join together in marriage, but due to Italian pressure Japan backed out. If we can sway Japan in our favor again, then we may have a chance to "
+ ETH_lion_roar:0 "The Lion Roars"
+ ETH_lion_roar_desc:0 "Invigorated by their foreign support, Ethiopia rallies again to remove the colonialists once and for all."

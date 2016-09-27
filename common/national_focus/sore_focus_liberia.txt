@@ -1,0 +1,412 @@
+#####################################################################
+#																	#
+#					       Ethiopia Reborn 				  		    #
+#																	#
+# 							FOCUS TREES	 							#
+#																 	#
+#####################################################################
+
+focus_tree = {
+	id = lib_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = LIB
+		}
+	
+	}
+default = no
+
+###### DEVELOPMENT FOCUS ########
+
+focus = {
+		id = LIB_infrastructure_effots
+		icon = GFX_goal_generic_construct_infrastructure
+		#text = "inf level 1"
+		x = 0
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}	
+		completion_reward = {
+			298 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	
+focus = {
+		id = LIB_infrastructure_effots_2
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = LIB_infrastructure_effots }
+		#text = "inf level 1"
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}	
+		completion_reward = {
+			298 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	
+focus = {
+		id = LIB_industrial_development
+		icon = GFX_goal_generic_construct_civ_factory
+		#text = "Urban Factories"
+		#available = {	}
+		x = 2
+		y = 0
+		cost = 10
+		#ai_will_do = {factor = 1 }
+		completion_reward = {
+			298 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+					}
+				}
+			}
+		}
+		
+focus = {
+		id = LIB_mil_factory
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = {focus = LIB_industrial_development }
+		x = 2
+		y = 1
+		cost = 10
+
+		completion_reward = {
+			298 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+		}
+		}
+	}		
+
+		
+focus = {
+		id = LIB_industrial_modernization
+		icon = GFX_goal_generic_construct_infrastructure
+		#text = "Foreign Contracts"
+		prerequisite = { focus = LIB_infrastructure_effots_2 }
+		prerequisite = { focus = LIB_mil_factory}
+		x = 1
+		y = 4
+		cost = 10
+		completion_reward = {
+			add_research_slot = 1
+			298 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			add_ideas = partial_economic_mobilization
+			}
+		}
+	}
+
+	
+	focus = {
+		id = LIB_freeport_monrovia
+		prerequisite = { focus = LIB_industrial_modernization }
+		icon = GFX_goal_generic_construct_naval_dockyard
+		#text = "freeport of monrovia
+		x = 1
+		y = 5
+		cost = 10
+		completion_reward = {
+			298 = {
+				add_extra_state_shared_building_slots = 6
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = POL_coastal_defense
+				bonus = 0.5
+				uses = 1
+				category = dd_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = LIB_steel_oil
+		icon = GFX_focus_research
+		#text = "Technology Institute"
+		prerequisite = { 
+			focus = LIB_freeport_monrovia
+			}
+		x = 0
+		y = 6
+		cost = 10
+		completion_reward = {
+			add_resource = {
+				type = steel
+				amount = 30
+				state = 298
+			}
+			add_resource = {
+				type = oil
+				amount = 20
+				state = 298
+			}
+		}
+	}
+	
+	focus = {
+		id = LIB_develop_navy
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 2
+		y = 6
+		cost = 10
+		prerequisite = { 
+			focus = LIB_freeport_monrovia
+			}
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				name = navy_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = navy_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = LIB_modern_navy
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 2
+		y = 6
+		cost = 10
+		prerequisite = { 
+			focus = LIB_develop_navy
+			}
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = dd_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 4
+				technology = early_destroyer
+				technology = early_light_cruiser
+				technology = early_submarine
+				technology = basic_destroyer
+				technology = basic_light_cruiser
+				technology = basic_submarine
+			}
+		}
+	}
+	
+focus = {
+		id = LIB_roberts_airport
+		prerequisite = { focus = LIB_industrial_modernization }
+		icon = GFX_goal_generic_construct_naval_dockyard
+		#text = "freeport of monrovia
+		x = 4
+		y = 5
+		cost = 10
+		completion_reward = {
+			298 = {
+				add_extra_state_shared_building_slots = 13
+				add_building_construction = {
+					type = air_base
+					level = 10
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 3				
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+focus = {
+		id = LIB_develop_airforce
+		icon = GFX_goal_generic_build_airforce
+		prerequisite = { focus = LIB_roberts_airport }
+		x = 4
+		y = 6
+		cost = 10
+
+		completion_reward = {
+			air_experience = 25
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = air_doctrine
+			}
+		}
+	}
+	
+focus = {
+		id = LIB_modern_airforce
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 4
+		y = 7
+		cost = 10
+		prerequisite = { focus = LIB_develop_airforce }
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = air_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 4
+				technology = early_figher
+				technology = figher1
+				technology = cas1
+				technology = naval_bomber1
+			}
+		}
+	}
+	
+### MANPOWER TREE ####
+focus = {
+		id = LIB_immigration
+		icon = GFX_goal_generic_military_sphere
+		#text = "Encourage Immigration"
+		x = 4
+		y = 0
+		cost = 1
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			country_event = { id = liberia.1001 days = 1 }	
+			}		
+			
+	}
+	
+focus = {
+		id = LIB_national_guard
+		icon = GFX_goal_generic_military_sphere
+		#text = "National Guard"
+		prerequisite = { focus = LIB_immigration }
+		available = {
+			OR = {			
+				OR = {
+					ENG = { has_added_tension_amount  > 10 }
+					SOV = { has_added_tension_amount  > 10 }
+					GER = { has_added_tension_amount  > 10 }
+					JAP = { has_added_tension_amount  > 10 }
+					ITA = { has_added_tension_amount  > 10 }
+					USA = { has_added_tension_amount  > 10 }
+				}
+				OR = {
+					ENG = { has_offensive_war = yes }
+					SOV = { has_offensive_war = yes }
+					GER = { has_offensive_war = yes }
+					JAP = { has_offensive_war = yes }
+				}
+			}
+		}
+		x = 4
+		y = 1
+		cost = 1
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+				add_ideas = lib_national_guard_idea
+			}		
+			
+	}
+
+focus = {
+		id = LIB_military_conscription
+		icon = GFX_goal_generic_propaganda
+		#text = "military conscription"
+		prerequisite = { focus = LIB_national_guard }
+		available = {
+			OR = {			
+				OR = {
+					ENG = { has_added_tension_amount  > 30 }
+					SOV = { has_added_tension_amount  > 30 }
+					GER = { has_added_tension_amount  > 30 }
+					JAP = { has_added_tension_amount  > 30 }
+					ITA = { has_added_tension_amount  > 30 }
+					USA = { has_added_tension_amount  > 30 }
+				}
+				OR = {
+					ENG = { has_offensive_war = yes }
+					SOV = { has_offensive_war = yes }
+					GER = { has_offensive_war = yes }
+					JAP = { has_offensive_war = yes }
+					USA = { has_offensive_war = yes }
+				}
+			}
+		}
+		x = 4
+		y = 3
+		cost = 10
+
+		ai_will_do = {
+			factor = 12
+		}
+		completion_reward = {
+			army_experience = 15
+			add_ideas = extensive_conscription
+		}
+	}	
+	
+}
+	
+
+	
+	
+	
+
+	
+
+	
+	
