@@ -1,155 +1,33 @@
 ﻿#####################################################################
 #																	#
-#					 Revenge of Prester John				  		#
+#					 Little America							  		#
 #																	#
-# 						ETHIOPIAN EVENTS 							#
+# 						LIBERIA EVENTS 								#
 #																 	#
 #####################################################################
 
-add_namespace = ethiopia
+add_namespace = liberia
 
-############################## ETHIOPIAN RESOLVE EVENTS #################################
-#																						#
-#							1. German Equipment									        #
-#																						#
-#########################################################################################
 
 country_event = {
-	id = ethiopia.1001
-	title = "German Guns"
-	desc = "Germany sends supplies to advance our industry. With a modern industry we can finally take the fight to the Mussolini."
+	id = liberia.1001
+	title = "Immigration Policy"
+	desc = "Fleeing persecution, hundreds of thousands of Jewish peoples are leaving Germany, we could welcome them into our country; however this will likely upset Germany and her allies."
 	picture = GFX_report_event_german_troops
 	
 	is_triggered_only = yes
 
 	option = {
 		ai_chance = { base = 10 }
-		name = "We must rush production!"
-		add_resource = {
-				type = steel
-				amount = 16
-				state = 271
-			}
-		271 = {
-				add_extra_state_shared_building_slots = 4
-				add_building_construction = {
-					type = arms_factory
-					level = 4
-					instant_build = yes
-				}
-		}
+		name = "We must open our borders to all peoples, especially those fleeing persecution!"
+		add_manpower = 10000
+		GER = {	add_opinion_modifier = { target = LIB modifier = large_decrease } }
 	}
-}
-
-country_event = {
-	id = ethiopia.1002
-	title = "Japanese Assistance"
-	desc = "Japan and Ehtopia sign the Second Treaty of Friendship and Commerce, providing equipment and support for Ethopia's industry and military."
-	picture = GFX_report_event_japanese_troops
 	
-	is_triggered_only = yes
-
 	option = {
 		ai_chance = { base = 10 }
-		name = "Our steel factories stir with activity!"
-		add_ideas = ETH_japan_advice
-		add_resource = {
-				type = steel
-				amount = 8
-				state = 271
-			}
-	}
+		name = "We cannot risk upseting Germany."
+		GER = {	add_opinion_modifier = { target = LIB modifier = small_increase } }
 	}
 	
-country_event = {
-	id = ethiopia.1003
-	title = "A Royal Wedding"
-	desc = "Ethiopian Prince Lij Araya Abebe, nephew of Ethiopian Emperor Haile Selassie, and Japanese royal Miss Masako Kuroda, daughter of Viscount Kuroda Hiroyuki were joined in royal marriage. Originally planned in April of 1934, Japan bowed out due to Italian pressure. With our political efforts, we have swayed the Japanese people to form our Alliance of Colored Peoples to rise up against colonial repression."
-	picture = GFX_report_event_japanese_troops
-	
-	is_triggered_only = yes
-
-		option = {
-		ai_chance = { base = 10 }
-		name = "Japan joins us!"
-			if = {
-				limit = {
-					JAP = { 
-						is_puppet = no
-						NOT = is_in_faction_with = GER
-					}
-				}
-				}
-		ETH = { add_to_faction = JAP }
-		JAP = {
-			add_ai_strategy = {
-				type = alliance
-				id = "ETH"
-				value = 200
-			}
-		}
-		}
-	}
-	
-#Treaty of Cairo, Somaliland and Eritrea annexed
-	country_event = {
-	id = ethiopia.1004
-	title = "Treaty of Cairo"
-	desc = "After the League of Nations declaration that the member states would not recognize Italy's claims on Ethiopian land, representatives of the five Great Powers as well as diplomats from Ethiopia and Italy have met in Cairo and agreed to end hostilities with Italy agreeing to cede control of Eritrea and Somaliland to Ethiopia."
-	picture = GFX_report_event_german_troops
-	
-	is_triggered_only = yes
-	
-	#fire_only_once = yes
-	#trigger = {
-	#	tag = ETH
-	#	ITA = { exists = yes }
-	#	has_war_with = ITA
-	#	controls_state = 550
-	#	controls_state = 559
-	#}
-	#mean_time_to_happen = {	days = 14 }
-	
-	option = {
-		ai_chance = { base = 1 }
-		name = "Hopefully this peace will last."
-		ITA = {white_peace = ETH}
-		ETH = { 
-			transfer_state = 550
-			if = {
-			limit = { has_idea = second_italo_ethiopian_war }
-				remove_ideas = second_italo_ethiopian_war
-			}}
-		if = { 
-			limit = { has_idea = went_with_britain }
-				remove_ideas = went_with_britain
-				add_ideas = british_ideas
-				ENG = { give_guarantee = ETH }
-			}
-		if = { 
-			limit = { has_idea = went_with_belgium }
-				remove_ideas = went_with_belgium
-				add_ideas = belgian_ideas
-				BEL = { give_guarantee = ETH }
-			}
-		if = { 
-			limit = { has_idea = went_with_soviets }
-				remove_ideas = went_with_soviets
-				add_ideas = soviet_ideas
-				SOV = { give_guarantee = ETH }
-			}
-		if = { 
-			limit = { has_idea = went_with_germans }
-				remove_ideas = went_with_germans
-				add_ideas = german_ideas
-				GER = { give_guarantee = ETH }
-			}
-		ETH = { 
-			transfer_state = 559
-			if = {
-			limit = { has_idea = second_italo_ethiopian_war }
-				remove_ideas = second_italo_ethiopian_war
-			}}
-
-	}
 }

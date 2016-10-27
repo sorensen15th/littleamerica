@@ -23,8 +23,19 @@ country = {
 			}
 	}
 	
+	lib_national_guard_idea = { #ind focus 1
+		allowed = {	always = no	}
+			removal_cost = -1
+			picture = generic_manpower_bonus
+			modifier = { conscription = 0.025}
+	}	
 	
-		
+	lib_militarism = { #ind focus 1
+		allowed = {	always = no	}
+			removal_cost = -1
+			picture = generic_manpower_bonus
+			modifier = { conscription = 0.05}
+	}	
 }
 	
 	
